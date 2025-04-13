@@ -1,0 +1,8 @@
+
+
+backend:
+  image: my-backend:latest
+  replicas: 2
+  servicePort: 5000
+
+
