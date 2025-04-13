@@ -1,0 +1,4 @@
+app:
+  image: my-app:latest
+  replicas: 1
+  servicePort: 8080
