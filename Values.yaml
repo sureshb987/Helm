@@ -1,0 +1,34 @@
+replicaCount: 2
+image:
+  repository: my-app-image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+mysql:
+  image: mysql:8.0
+  rootPassword: rootpass
+  database: mydb
+  user: myuser
+  password: mypass
+  persistence:
+    enabled: true
+    size: 1Gi
+
+service:
+  type: ClusterIP
+  port: 80
+
+  frontend:
+  image: nginx:latest
+  replicas: 2
+  servicePort: 80
+
+backend:
+  image: my-backend:latest
+  replicas: 2
+  servicePort: 5000
+
+app:
+  image: my-app:latest
+  replicas: 1
+  servicePort: 8080
