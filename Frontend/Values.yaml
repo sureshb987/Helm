@@ -1,0 +1,4 @@
+frontend:
+  image: nginx:latest
+  replicas: 2
+  servicePort: 80
